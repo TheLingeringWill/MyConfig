@@ -1,10 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
   event = "LazyFile",
-  dependencies = {
-    "mason.nvim",
-    { "williamboman/mason-lspconfig.nvim", config = function() end },
-  },
   opts = function()
     ---@class PluginLspOpts
     local ret = {
@@ -129,8 +125,6 @@ return {
 
     LazyVim.lsp.setup()
     LazyVim.lsp.on_dynamic_capability(require("lazyvim.plugins.lsp.keymaps").on_attach)
-
-    LazyVim.lsp.words.setup(opts.document_highlight)
 
     -- diagnostics signs
     if vim.fn.has("nvim-0.10.0") == 0 then

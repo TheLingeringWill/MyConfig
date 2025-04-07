@@ -8,3 +8,6 @@ vim.diagnostic.config({
   update_in_insert = false,
   severity_sort = false,
 })
+
+-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3
